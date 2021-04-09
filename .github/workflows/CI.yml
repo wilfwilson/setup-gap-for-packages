@@ -36,9 +36,15 @@ jobs:
             gap-branch: master
             GAP_PKGS_TO_BUILD: ''
             HPCGAP: no
+          - os: windows-latest
+            gap-branch: master
+            GAP_PKGS_TO_BUILD: ''
+            HPCGAP: no
 
     steps:
       - uses: actions/checkout@v2
+      - if: ${{ matrix.os == 'windows-latest' }}
+        uses: gap-actions/setup-cygwin@v1
       - uses: ./
         with:
           GAPBRANCH: ${{ matrix.gap-branch }}

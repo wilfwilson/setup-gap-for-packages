@@ -21,12 +21,14 @@ inputs:
     description: 'set to 32 to use 32bit build flags for the package'
     required: false
     default: ''
+env:
+  CHERE_INVOKING: 1
 runs:
   using: "composite"
   steps:
       - name: "Download CI scripts"
         run:  git clone https://github.com/gap-system/pkg-ci-scripts.git
-        shell: bash
+        shell: C:\cygwin64\bin\bash.exe --login -o igncr '{0}'
       - name: "Install dependencies"
         run: |
           echo "Installing dependencies"
@@ -72,4 +74,4 @@ runs:
           GAP_PKGS_TO_CLONE: ${{ inputs.GAP_PKGS_TO_CLONE }}
           GAPBRANCH: ${{ inputs.GAPBRANCH }}
           HPCGAP: ${{ inputs.HPCGAP }}
-        shell: bash
+        shell: C:\cygwin64\bin\bash.exe --login -o igncr '{0}'
