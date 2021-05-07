@@ -28,7 +28,7 @@ runs:
   steps:
       - name: "Download CI scripts"
         run:  git clone https://github.com/gap-system/pkg-ci-scripts.git
-        shell: C:\cygwin64\bin\bash.exe --login -o igncr '{0}'
+        shell: bash
       - name: "Install dependencies"
         run: |
           echo "Installing dependencies"
