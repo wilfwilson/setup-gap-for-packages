@@ -26,9 +26,6 @@ env:
 runs:
   using: "composite"
   steps:
-      - name: "Download CI scripts"
-        run:  git clone https://github.com/gap-system/pkg-ci-scripts.git
-        shell: bash
       - name: "Install dependencies"
         run: |
           echo "Installing dependencies"
@@ -59,6 +56,9 @@ runs:
             brew install gmp zlib && brew link zlib
           fi
         shell: bash
+      - name: "Download CI scripts"
+        run:  git clone https://github.com/gap-system/pkg-ci-scripts.git
+        shell: C:\cygwin64\bin\bash.exe --login -o igncr '{0}'
       - name: "Compile GAP and download packages"
         run: |
           # Handle GAP_PKGS_TO_BUILD default value
