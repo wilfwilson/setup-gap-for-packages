@@ -25,7 +25,7 @@ runs:
   using: "composite"
   steps:
       - name: "Download CI scripts"
-        run:  git clone https://github.com/gap-system/pkg-ci-scripts.git
+        run:  git clone -b add-gitattributes-file https://github.com/wilfwilson/pkg-ci-scripts.git
         shell: bash
       - name: "Install dependencies"
         run: |
